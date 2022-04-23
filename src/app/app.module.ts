@@ -21,12 +21,14 @@ import { initializeApp,provideFirebaseApp } from '@angular/fire/app';
 import { environment } from '../environments/environment';
 import { provideAuth,getAuth } from '@angular/fire/auth';
 import { provideFirestore,getFirestore } from '@angular/fire/firestore';
+import { SuccessTaskComponent } from './success-task/success-task.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     NavbarComponent,
-    AddTaskComponent
+    AddTaskComponent,
+    SuccessTaskComponent
   ],
   imports: [
     BrowserModule,

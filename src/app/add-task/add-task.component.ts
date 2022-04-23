@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { addTask } from '../models/addTask.class';
 import { AngularFirestore } from '@angular/fire/compat/firestore';
+import { SuccessTaskComponent } from '../success-task/success-task.component';
+import {MatDialog, MatDialogRef, MAT_DIALOG_DATA} from '@angular/material/dialog';
 
 @Component({
   selector: 'app-add-task',
@@ -27,7 +29,11 @@ export class AddTaskComponent implements OnInit {
   ];
   loading = false;
 
-  constructor(private firestore: AngularFirestore) { }
+  constructor(
+    private firestore: AngularFirestore,
+    public dialog: MatDialog,
+
+  ) { }
 
   ngOnInit(): void {
   }
@@ -45,7 +51,8 @@ export class AddTaskComponent implements OnInit {
       .then((result: any) => {
         this.loading = false;
         console.log('added Task', result);
-        
+        this.dialog.open(SuccessTaskComponent);
+   
       })
     this.clearFields()
   }
