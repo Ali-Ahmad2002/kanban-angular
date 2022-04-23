@@ -1,0 +1,71 @@
+.main_task_container {
+    width: 90vw;
+    height: 100vh;
+}
+
+.child_task_container {
+    padding-top: 5vh;
+    h1 {
+        margin: 0;
+        text-align: center;
+        padding-bottom: 32px;
+        font-size: 48px;
+    }
+}
+
+.jsSp {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-bottom: 100px;
+}
+
+.title_and_date {}
+
+.all_fields_main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 60vh;
+}
+
+.all_fields_child {
+    width: 60vw;
+    background-color: #7575ff57;
+    padding: 50px;
+    border-radius: 10px;
+    height: 65vh;
+    position: relative;
+}
+
+.txtarea {}
+
+.firstPart {
+    width: 350px !important;
+    font-size: 16px;
+}
+
+.addBtn {
+    width: 350px;
+    height: 50px;
+    background-color: #8181f8;
+    color: white;
+    transition: all 75ms ease-in-out;
+    &:hover {
+        background-color: #7171ef;
+    }
+}
+
+.spinner {
+    display: flex;
+    justify-content: center;
+    position: absolute;
+    top: 0;
+    width: 60vw;
+    align-items: center;
+    height: 65vh;
+    mat-spinner {
+        width: 200px !important;
+        height: 200px !important;
+    }
+}

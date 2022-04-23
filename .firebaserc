@@ -1,0 +1,14 @@
+{
+  "targets": {
+    "kanbanangular-d3401": {
+      "hosting": {
+        "kanban-angular": [
+          "kanbanangular-d3401"
+        ]
+      }
+    }
+  },
+  "projects": {
+    "default": "kanbanangular-d3401"
+  }
+}
