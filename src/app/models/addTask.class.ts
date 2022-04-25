@@ -4,6 +4,7 @@ export class addTask {
     public category: any = '';
     public urgency: any = '';
     public description: string = '';
+    public id: string = '';
 
     constructor(obj?: any) {
         this.taskTitle = obj ? obj.taskTitle : '';
@@ -11,6 +12,7 @@ export class addTask {
         this.category = obj ? obj.category : '';
         this.urgency = obj ? obj.urgency : '';
         this.description = obj ? obj.description : '';
+        this.id = obj ? obj.id : '';
     }
 
     public toJson() {
@@ -19,7 +21,8 @@ export class addTask {
             date: this.date,
             category: this.category,
             urgency: this.urgency,
-            description: this.description
+            description: this.description,
+            id: this.id
         }
     }
 }

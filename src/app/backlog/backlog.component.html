@@ -1,0 +1,26 @@
+<div class="main_backlog_container">
+    <div class="child_backlog_container">
+
+        <div class="all_tasks">
+            <h1>Backlog</h1>
+            <div class="child_tasks">
+                <div class="all_tasks_child" *ngFor="let task of allTasks[0]; let i=index">
+                    <mat-card class="task_card">
+                        <div>
+                            <p> <b>Task:</b> {{ [i] }} </p>
+                            <h2>{{ task.taskTitle }} </h2>
+                            <span> category: <b>{{ task.category }}</b> </span>
+                        </div>
+                        <div class="rigth_part">
+                            <span>Task was created on: <b>{{ showDate(task.date) | date: 'MMM d' }}</b></span>
+                            <span class="des"> {{ task.description }} </span>
+                        </div>
+                    </mat-card>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
