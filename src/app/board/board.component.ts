@@ -27,18 +27,17 @@ export class BoardComponent implements OnInit {
       .collection('addedTask')
       .valueChanges({ idField: 'id' })
       .subscribe((changes: any) => {
-        console.log('changes', changes);
+        // console.log('changes', changes);
         this.allTasks = changes.map((t: any) => new AddTask(t));
         this.todo = this.allTasks.filter((t: any) => t.list == 'todo');
         this.inProgress = this.allTasks.filter((t: any) => t.list == 'inProgress');
         this.testing = this.allTasks.filter((t: any) => t.list == 'testing');
         this.done = this.allTasks.filter((t: any) => t.list == 'done');
-
-
       })
   }
 
-  drop(event: CdkDragDrop<AddTask[]>) {
+  drop(event: CdkDragDrop<AddTask[]>, status:string) {
+
     if (event.previousContainer === event.container) {
       moveItemInArray(event.container.data, event.previousIndex, event.currentIndex);
     } else {
@@ -48,20 +47,21 @@ export class BoardComponent implements OnInit {
         event.previousIndex,
         event.currentIndex,
       );
-      for (let i = 0; i < this.allTasks.length; i++) {
-        this.updateTaskList(this.allTasks[i].list)
-      }
-
+  
+      event.container.data[0]['list'] = status;
+      console.log('EVENT',  event.container.data[0]);
+      this.updateTaskList(event.container.data[0]);
     }
   }
 
-  updateTaskList(list: any) {
+  updateTaskList(item: AddTask) {
+    console.log('Updating item', item);
     this.firestore
       .collection('addedTask')
-      .doc(list)
-      .update(list)
+      .doc(item['id'])
+      .update(item.toJson())
       .then((res: any) => {
-        console.log(list)
+        // console.log('test', item.toJson())
       })
   }
 
