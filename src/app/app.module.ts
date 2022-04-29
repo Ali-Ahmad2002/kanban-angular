@@ -11,6 +11,7 @@ import { AngularFirestoreModule } from '@angular/fire/compat/firestore';
 import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
 import {MatDialogModule} from '@angular/material/dialog';
 import {MatCardModule} from '@angular/material/card';
+import {DragDropModule} from '@angular/cdk/drag-drop';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -24,6 +25,7 @@ import { provideAuth,getAuth } from '@angular/fire/auth';
 import { provideFirestore,getFirestore } from '@angular/fire/firestore';
 import { SuccessTaskComponent } from './success-task/success-task.component';
 import { BacklogComponent } from './backlog/backlog.component';
+import { BoardComponent } from './board/board.component';
 
 @NgModule({
   declarations: [
@@ -31,7 +33,8 @@ import { BacklogComponent } from './backlog/backlog.component';
     NavbarComponent,
     AddTaskComponent,
     SuccessTaskComponent,
-    BacklogComponent
+    BacklogComponent,
+    BoardComponent
   ],
   imports: [
     BrowserModule,
@@ -47,7 +50,8 @@ import { BacklogComponent } from './backlog/backlog.component';
     AngularFirestoreModule,
     MatProgressSpinnerModule,
     MatDialogModule,
-    MatCardModule
+    MatCardModule,
+    DragDropModule
     // provideFirebaseApp(() => initializeApp(environment.firebase)),
     // provideAuth(() => getAuth()),
     // provideFirestore(() => getFirestore())

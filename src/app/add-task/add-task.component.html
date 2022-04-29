@@ -49,7 +49,7 @@
                         <textarea matInput placeholder="Write a description" rows="3" [(ngModel)]="description"></textarea>
                     </mat-form-field>
 
-                    <button mat-button color="primary" class="addBtn" (click)="saveTask()">Add task</button>
+                    <button [disabled]="" mat-button color="primary" class="addBtn" (click)="saveTask()">Add task</button>
                 </div>
                 <div *ngIf="loading" class="spinner">
                     <mat-spinner diameter="200" value="200"></mat-spinner>

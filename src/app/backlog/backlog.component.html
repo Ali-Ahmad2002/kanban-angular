@@ -4,9 +4,13 @@
         <div class="all_tasks">
             <h1>Backlog</h1>
             <div class="child_tasks">
+                <div *ngIf="allTasks==0" class="overlay">
+                    <h3>There are no tasks</h3>
+                </div>
                 <div class="all_tasks_child" *ngFor="let task of allTasks[0]; let i=index">
                     <mat-card class="task_card">
                         <div>
+                            <button (click)="deletTask(task)">Delet</button>
                             <p> <b>Task:</b> {{ [i] }} </p>
                             <h2>{{ task.taskTitle }} </h2>
                             <span> category: <b>{{ task.category }}</b> </span>

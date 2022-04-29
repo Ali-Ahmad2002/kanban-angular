@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { addTask } from '../models/addTask.class';
+import { AddTask } from '../models/addTask.class';
 import { AngularFirestore } from '@angular/fire/compat/firestore';
 import { SuccessTaskComponent } from '../success-task/success-task.component';
 import {MatDialog, MatDialogRef, MAT_DIALOG_DATA} from '@angular/material/dialog';
@@ -11,7 +11,7 @@ import {MatDialog, MatDialogRef, MAT_DIALOG_DATA} from '@angular/material/dialog
 })
 export class AddTaskComponent implements OnInit {
 
-  task = new addTask();
+  task = new AddTask();
   taskTitle!: any;
   date!: any;
   description!: any;
@@ -52,8 +52,10 @@ export class AddTaskComponent implements OnInit {
         this.loading = false;
         console.log('added Task', result);
         this.dialog.open(SuccessTaskComponent);
-   
       })
+      .catch((error) => {
+        console.error('Error removing document: ', error);
+     });
     this.clearFields()
   }
 

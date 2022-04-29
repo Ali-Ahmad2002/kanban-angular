@@ -1,0 +1,55 @@
+.main_board_container {
+    width: 90vw;
+    height: 100vh;
+}
+
+.child_board_container {
+    padding-top: 5vh;
+}
+
+.all_tasks {
+    height: 90vh;
+    h1 {
+        margin: 0;
+        text-align: center;
+        padding-bottom: 32px;
+        font-size: 48px;
+    }
+}
+
+.child_tasks {
+    height: 70vh;
+    display: flex;
+    padding: 0 80px;
+    justify-content: center;
+}
+
+.ticket_content {
+    width: 25%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 4px 16px;
+}
+
+.ticket_content_child {
+    height: 100%;
+    width: 100%;
+    background-color: #7575ff57;
+    overflow-y: auto;
+    border-radius: 10px;
+}
+
+.example-box {
+    padding: 20px 10px;
+    border-bottom: solid 1px #ccc;
+    color: rgba(0, 0, 0, 0.87);
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    box-sizing: border-box;
+    cursor: move;
+    background: white;
+    font-size: 14px;
+}
