@@ -14,7 +14,6 @@ export class BoardComponent implements OnInit {
   inProgress!: AddTask[];
   testing!: AddTask[];
   done!: AddTask[];
-  taskList!: string;
 
   allTasks!: AddTask[];
 

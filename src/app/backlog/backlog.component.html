@@ -10,7 +10,7 @@
                 <div class="all_tasks_child" *ngFor="let task of allTasks[0]; let i=index">
                     <mat-card class="task_card">
                         <div>
-                            <button class="deletBtn" mat-button color="warn" (click)="deletTask(task)">Delet</button>
+                            <button class="deletBtn" mat-button color="warn" (click)="deletTask(task)">Delete</button>
                             <p> <b>Task:</b> {{ [i] }} </p>
                             <h2>{{ task.taskTitle }} </h2>
                             <span> category: <b>{{ task.category }}</b> </span>
