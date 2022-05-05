@@ -36,7 +36,7 @@
 }
 
 ::-webkit-scrollbar {
-    width: 12px;
+    width: 4px;
 }
 
 ::-webkit-scrollbar-track {
@@ -64,6 +64,9 @@
 .des {
     margin-top: 10px;
     word-break: break-all;
+    max-height: 65px;
+    min-height: 65px;
+    overflow-y: auto;
 }
 
 .overlay {
@@ -80,6 +83,10 @@
 .deletBtn {
     color: white !important;
     background-color: #f44336 !important;
-    margin-top: -10px;
-    margin-bottom: 10px;
+}
+
+.rigth_date {
+    border: 1px solid black;
+    padding: 4px;
+    border-radius: 4px;
 }

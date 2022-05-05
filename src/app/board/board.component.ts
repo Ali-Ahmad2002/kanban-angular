@@ -46,10 +46,10 @@ export class BoardComponent implements OnInit {
         event.previousIndex,
         event.currentIndex,
       );
-  
-      event.container.data[0]['list'] = status;
-      console.log('EVENT',  event.container.data[0]);
-      this.updateTaskList(event.container.data[0]);
+      console.log(event);
+      event.container.data[event.currentIndex]['list'] = status;
+      console.log('EVENT',  event.container.data[event.currentIndex]);
+      this.updateTaskList(event.container.data[event.currentIndex]);
     }
   }
 
@@ -60,7 +60,7 @@ export class BoardComponent implements OnInit {
       .doc(item['id'])
       .update(item.toJson())
       .then((res: any) => {
-        // console.log('test', item.toJson())
+        console.log('test', this.allTasks)
       })
   }
 

@@ -10,14 +10,15 @@
                 <div class="all_tasks_child" *ngFor="let task of allTasks[0]; let i=index">
                     <mat-card class="task_card">
                         <div>
-                            <button class="deletBtn" mat-button color="warn" (click)="deletTask(task)">Delete</button>
+
                             <p> <b>Task:</b> {{ [i] }} </p>
                             <h2>{{ task.taskTitle }} </h2>
                             <span> category: <b>{{ task.category }}</b> </span>
                         </div>
                         <div class="rigth_part">
-                            <span>Task was created on: <b>{{ showDate(task.date) | date: 'MMM d' }}</b></span>
+                            <span class="rigth_date">Task was created on: <b>{{ showDate(task.date) | date: 'MMM d' }}</b></span>
                             <span class="des"> {{ task.description }} </span>
+                            <button class="deletBtn" mat-button color="warn" (click)="deletTask(task)">Delete</button>
                         </div>
                     </mat-card>
                 </div>
